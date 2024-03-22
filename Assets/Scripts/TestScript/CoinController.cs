@@ -55,7 +55,6 @@ public class CoinController : MonoBehaviour
                 float bounceForce = Mathf.Clamp(clickDuration, 0f, 1f) * moveSpeed; // 최대값을 moveSpeed로 제한
                 rigidBody.AddForce(bounceDirection * bounceForce, ForceMode.VelocityChange);
             }
-
         }
     }
 
