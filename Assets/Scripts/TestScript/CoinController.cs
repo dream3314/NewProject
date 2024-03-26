@@ -6,6 +6,7 @@ public class CoinController : MonoBehaviour
 {
     public float moveSpeed = 4f;
     private Rigidbody rigidBody;
+    public float addPowerRingforce = 15f;
 
     private float clickStartTime;
     private bool isClicking = false;
@@ -55,6 +56,15 @@ public class CoinController : MonoBehaviour
                 float bounceForce = Mathf.Clamp(clickDuration, 0f, 1f) * moveSpeed; // 최대값을 moveSpeed로 제한
                 rigidBody.AddForce(bounceDirection * bounceForce, ForceMode.VelocityChange);
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider ring)
+    {
+        if (ring.CompareTag("PowerRing"))
+        {
+            Vector3 direction = ring.transform.position - transform.position;
+            rigidBody.AddForce(direction.normalized * addPowerRingforce, ForceMode.Impulse);
         }
     }
 

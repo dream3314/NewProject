@@ -566,10 +566,9 @@ GameObject:
   - component: {fileID: 398816962}
   - component: {fileID: 398816961}
   - component: {fileID: 398816964}
-  - component: {fileID: 398816965}
   m_Layer: 0
   m_Name: PowerRing(H)
-  m_TagString: Untagged
+  m_TagString: PowerRing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -660,19 +659,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1749554, y: 1.5636238, z: 0.14000002}
   m_Center: {x: 0, y: 0.28818804, z: 0}
---- !u!114 &398816965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398816960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb0337313fbe30458c6fcc5a3cb2ff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GetRingForce: 0
 --- !u!1 &474669265
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,10 +671,9 @@ GameObject:
   - component: {fileID: 474669267}
   - component: {fileID: 474669266}
   - component: {fileID: 474669269}
-  - component: {fileID: 474669270}
   m_Layer: 0
   m_Name: PowerRing(L)
-  m_TagString: Untagged
+  m_TagString: PowerRing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -752,7 +737,7 @@ Transform:
   m_GameObject: {fileID: 474669265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: 0.9, z: -6.73}
+  m_LocalPosition: {x: -5.97, y: 0.9, z: -6.73}
   m_LocalScale: {x: 3, y: 3, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -779,19 +764,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1462193, y: 1.5059156, z: 0.14000002}
   m_Center: {x: 0, y: 0.31704235, z: 0}
---- !u!114 &474669270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474669265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb0337313fbe30458c6fcc5a3cb2ff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GetRingForce: 0
 --- !u!1 &494452539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  addPowerRingforce: 10
 --- !u!1 &880506987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,10 +1627,9 @@ GameObject:
   - component: {fileID: 880506989}
   - component: {fileID: 880506988}
   - component: {fileID: 880506991}
-  - component: {fileID: 880506992}
   m_Layer: 0
   m_Name: PowerRing(M)
-  m_TagString: Untagged
+  m_TagString: PowerRing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1721,7 +1693,7 @@ Transform:
   m_GameObject: {fileID: 880506987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12000036, y: 0.8, z: -9.08}
+  m_LocalPosition: {x: 4.98, y: 0.8, z: -9.08}
   m_LocalScale: {x: 2.5, y: 2.5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1748,19 +1720,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1073034, y: 1.612223, z: 0.14000002}
   m_Center: {x: 0, y: 0.2638895, z: 0}
---- !u!114 &880506992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880506987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb0337313fbe30458c6fcc5a3cb2ff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GetRingForce: 0
 --- !u!1 &901943749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1030757235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3450,7 +3409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &2139261087
 CapsuleCollider:
   m_ObjectHideFlags: 0
