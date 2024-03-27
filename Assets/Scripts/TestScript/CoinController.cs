@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
-    public float moveSpeed = 4f;
-    private Rigidbody rigidBody;
-    public float addPowerRingforce = 15f;
-
-    private float clickStartTime;
+    [SerializeField] float moveSpeed = 4f;
+    [SerializeField] private Rigidbody rigidBody;
+    [SerializeField] float addPowerRingforce = 15f;
+    [SerializeField] float clickStartTime;
     private bool isClicking = false;
-
     private Vector3 initialPosition;
+    private int bounceCount = 0;
+    
 
     void Start()
     {
@@ -55,6 +56,8 @@ public class CoinController : MonoBehaviour
                 Vector3 bounceDirection = (hit.point - transform.position).normalized;
                 float bounceForce = Mathf.Clamp(clickDuration, 0f, 1f) * moveSpeed; // 최대값을 moveSpeed로 제한
                 rigidBody.AddForce(bounceDirection * bounceForce, ForceMode.VelocityChange);
+
+                BounceCount();
             }
         }
     }
@@ -71,5 +74,11 @@ public class CoinController : MonoBehaviour
     void ResetPosition()
     {
         transform.position = initialPosition; // 초기 위치로 오브젝트 위치 변경
+    }
+
+    void BounceCount()
+    {
+        bounceCount++;
+        Debug.Log("Bounce Count: " + bounceCount);
     }
 }
