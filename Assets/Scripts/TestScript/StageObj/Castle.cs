@@ -8,10 +8,6 @@ public class Castle : MonoBehaviour
     [SerializeField] float MaxHP;
     [SerializeField] float PlayerSpawn;
 
-    private Collider collider;
-    private 
-
-
     void Awake()
     {
         
